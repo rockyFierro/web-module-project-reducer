@@ -3,11 +3,17 @@ import reducer, { initialState } from './reducers'
 import './App.css';
 import TotalDisplay from './components/TotalDisplay';
 import CalcButton from './components/CalcButton';
-import {addOne, applyNumber} from './actions'
+import { addOne, applyNumber } from './actions'
 
 
 function App() {
   const [state, dispatch] = useReducer(reducer, initialState)
+
+  const applyNum = (num) => {
+    isNaN(num) ?
+    console.warn(`${num} is not a valid input, please use a number.`) :
+    dispatch(applyNumber(num)) 
+  }
 
   return (
     <div className="App">
@@ -32,9 +38,10 @@ function App() {
             </div>
 
             <div className="row">
-              <CalcButton value={1} onClick={
-                ()=>{ dispatch(addOne()) }
-              }/>
+              <CalcButton value={1}
+                // onClick={ ()=>{ dispatch(addOne()) }
+                onClick={() => { applyNum(1) }}
+              />
               <CalcButton value={2} />
               <CalcButton value={3} />
             </div>
