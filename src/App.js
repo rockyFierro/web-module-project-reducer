@@ -40,22 +40,30 @@ function App() {
             <div className="row">
               <CalcButton value={1}
                 // onClick={ ()=>{ dispatch(addOne()) }
-                onClick={() => { applyNum(1) }}
+                onClick={() => { applyNum(1); }}
               />
-              <CalcButton value={2} />
-              <CalcButton value={3} />
+              <CalcButton value={2} 
+              onClick={() => { applyNum(2) }}/>
+              <CalcButton value={3} 
+              onClick={() => { applyNum(3) }}/>
             </div>
 
             <div className="row">
-              <CalcButton value={4} />
-              <CalcButton value={5} />
-              <CalcButton value={6} />
+              <CalcButton value={4} 
+              onClick={() => { applyNum(4) }}/>
+              <CalcButton value={5} 
+              onClick={() => { applyNum(5) }}/>
+              <CalcButton value={6} 
+              onClick={() => { applyNum(6) }}/>
             </div>
 
             <div className="row">
-              <CalcButton value={7} />
-              <CalcButton value={8} />
-              <CalcButton value={9} />
+              <CalcButton value={7} 
+              onClick={() => { applyNum(7) }}/>
+              <CalcButton value={8} 
+              onClick={() => { applyNum(8) }}/>
+              <CalcButton value={9} 
+              onClick={() => { applyNum(9) }}/>
             </div>
 
             <div className="row">
