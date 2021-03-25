@@ -3,7 +3,7 @@ import reducer, { initialState } from './reducers'
 import './App.css';
 import TotalDisplay from './components/TotalDisplay';
 import CalcButton from './components/CalcButton';
-import {addOne} from './actions'
+import {addOne, applyNumber} from './actions'
 
 
 function App() {
