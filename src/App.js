@@ -3,7 +3,7 @@ import reducer, { initialState } from './reducers'
 import './App.css';
 import TotalDisplay from './components/TotalDisplay';
 import CalcButton from './components/CalcButton';
-import { addOne, applyNumber, changeOperation, clearDisplay } from './actions'
+import { applyNumber, changeOperation, clearDisplay, remReturn, remClear ,remValue } from './actions'
 
 
 function App() {
@@ -32,9 +32,15 @@ function App() {
             </div>
 
             <div className="row">
-              <CalcButton value={"M+"} />
-              <CalcButton value={"MR"} />
-              <CalcButton value={"MC"} />
+              <CalcButton value={"M+"} 
+                onClick={ ()=> dispatch(remValue(state.total))}
+              />
+              <CalcButton value={"MR"} 
+                onClick={ ()=> dispatch(remReturn(state.memory))}
+              />
+              <CalcButton value={"MC"} 
+                onClick={ ()=> dispatch(remClear()) }
+              />
             </div>
 
             <div className="row">
